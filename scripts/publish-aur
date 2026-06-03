@@ -43,7 +43,7 @@ if git diff --cached --quiet -- PKGBUILD .SRCINFO README.md LICENSE; then
   exit 0
 fi
 
-if [[ -z "${COMMIT_MSG}" ]]; then
+if [[ -z "${COMMIT_MSG:-}" ]]; then
   git commit -m "Update ${pkgname} to ${version}"
 else
   git commit -m "${COMMIT_MSG}"
